@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { API_BASE_URL } from 'DollarzApp/src/env';
 
 export const fetchCustomerStripeSources = accessToken => {
   const headers = {
@@ -7,7 +8,7 @@ export const fetchCustomerStripeSources = accessToken => {
   };
 
   return axios
-    .get('http://localhost:5000/api/getCustomerCards', { headers })
+    .get(`${API_BASE_URL}/api/getCustomerCards`, { headers })
     .then(({ data }) => {
       return data.customerCards;
     })
@@ -28,7 +29,7 @@ export const doPayment = (offer, customerCard, accessToken) => {
     'x-access-token': accessToken,
   };
   return axios
-    .post('http://localhost:5000/api/doPayment', body, { headers })
+    .post(`${API_BASE_URL}/api/doPayment`, body, { headers })
     .then(({ data }) => {
       return data;
     })
@@ -48,7 +49,7 @@ export const createUser = (username, password) => {
   };
 
   return axios
-    .post('http://localhost:5000/api/createCustomer', body, { headers })
+    .post(`${API_BASE_URL}/api/createCustomer`, body, { headers })
     .then(({ data }) => {
       return data;
     })
@@ -64,7 +65,7 @@ export const checkAuth = accessToken => {
   };
 
   return axios
-    .get('http://localhost:5000/api/checkAuth', { headers })
+    .get(`${API_BASE_URL}/api/checkAuth`, { headers })
     .then(() => {
       return Promise.resolve();
     })
@@ -84,7 +85,7 @@ export const login = (username, password) => {
   };
 
   return axios
-    .post('http://localhost:5000/api/login', body, { headers })
+    .post(`${API_BASE_URL}/api/login`, body, { headers })
     .then(({ data }) => {
       return data;
     })
@@ -98,7 +99,7 @@ export const fetchStripeOrders = accessToken => {
     'Content-Type': 'application/json',
     'x-access-token': accessToken,
   };
-  return axios.get('http://localhost:5000/api/getStripeOrders', { headers }).then(result => {
+  return axios.get(`${API_BASE_URL}/api/getStripeOrders`, { headers }).then(result => {
     return result.data.orders.data;
   });
 };
@@ -112,7 +113,7 @@ export const refundStripeOrder = (accessToken, chargeId) => {
   const body = { chargeId: chargeId };
 
   return axios
-    .post('http://localhost:5000/api/refundStripeOrder', body, { headers })
+    .post(`${API_BASE_URL}/api/refundStripeOrder`, body, { headers })
     .then(result => {
       return result.data;
     })
