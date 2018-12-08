@@ -19,9 +19,10 @@ import CheckBox from 'react-native-check-box';
 import { doPayment } from 'DollarzApp/src/services/api';
 import { CreditCard } from '../components';
 import { offerMap } from '../services/offerMap';
+import { stripePublishableKey } from 'DollarzApp/app-secret.json';
 
 stripe.setOptions({
-  publishableKey: 'pk_test_NXzesZUopyI0RM7xO4HoIEg3',
+  publishableKey: stripePublishableKey,
   merchantId: 'MERCHANT_ID',
 });
 
@@ -180,30 +181,28 @@ class Order extends Component {
                 ))}
               </ScrollView>
             )}
-            {!this.state.isPaymentPending &&
-              this.state.selectedOffer && (
-                <View>
-                  <Button
-                    title={`Payer ${this.state.selectedOffer.price} €`}
-                    onPress={this.requestPayment}
-                    disabled={!this.state.cardChoice}
-                  />
-                  <Button title={' Pay'} onPress={this.payWithApplePay} />
-                </View>
-              )}
+            {!this.state.isPaymentPending && this.state.selectedOffer && (
+              <View>
+                <Button
+                  title={`Payer ${this.state.selectedOffer.price} €`}
+                  onPress={this.requestPayment}
+                  disabled={!this.state.cardChoice}
+                />
+                <Button title={' Pay'} onPress={this.payWithApplePay} />
+              </View>
+            )}
             {this.state.isPaymentPending && (
               <View style={{ alignSelf: 'center' }}>
                 <Text>Paiement en cours</Text>
                 <ActivityIndicator />
               </View>
             )}
-            {!this.state.isPaymentPending &&
-              this.state.paymentSucceeded && (
-                <View style={{ alignItems: 'center' }}>
-                  <Text>Paiement réussi!</Text>
-                  <Icon name="ios-checkmark-circle" size={30} color={'rgb(130,219,9)'} />
-                </View>
-              )}
+            {!this.state.isPaymentPending && this.state.paymentSucceeded && (
+              <View style={{ alignItems: 'center' }}>
+                <Text>Paiement réussi!</Text>
+                <Icon name="ios-checkmark-circle" size={30} color={'rgb(130,219,9)'} />
+              </View>
+            )}
             {this.state.shouldDisplayPaymentError && this.renderPaymentError()}
           </View>
         ) : (
