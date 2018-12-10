@@ -18,7 +18,7 @@
     "react-native": "0.53.3",
     "react-native-check-box": "^2.1.6",
     "react-native-vector-icons": "^4.5.0",
-    "react-navigation": "^1.4.0",
+    "react-navigation": "^3.0.7",
     "tipsi-stripe": "^6.1.2"
   },
   "devDependencies": {
