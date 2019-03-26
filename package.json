@@ -15,7 +15,7 @@
     "mobx": "^5.9.0",
     "mobx-react": "^5.4.3",
     "react": "^16.8.4",
-    "react-native": "0.53.3",
+    "react-native": "0.59.2",
     "react-native-check-box": "^2.1.7",
     "react-native-vector-icons": "^4.5.0",
     "react-navigation": "^1.4.0",
