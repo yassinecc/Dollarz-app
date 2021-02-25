@@ -5160,9 +5160,9 @@ number-is-nan@^1.0.0:
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
 nwmatcher@^1.4.3:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/nwmatcher/-/nwmatcher-1.4.3.tgz#64348e3b3d80f035b40ac11563d278f8b72db89c"
-  integrity sha512-IKdSTiDWCarf2JTS5e9e2+5tPZGdkRJ79XjYV0pzK8Q9BpsFyBq1RGKxzs7Q8UBushGw7m6TzVKz6fcY99iSWw==
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/nwmatcher/-/nwmatcher-1.4.4.tgz#2285631f34a95f0d0395cd900c96ed39b58f346e"
+  integrity sha512-3iuY4N5dhgMpCUrOVnuAdGrgxVqV2cJpM+XNccjR2DKOB1RUP0aA+wGXEiNziG/UKboFyGBIoKOaNlJxx8bciQ==
 
 oauth-sign@~0.8.1, oauth-sign@~0.8.2:
   version "0.8.2"
@@ -6321,14 +6321,6 @@ sax@~1.1.1:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.1.6.tgz#5d616be8a5e607d54e114afae55b7eaf2fcc3240"
   integrity sha1-XWFr6KXmB9VOEUr65Vt+ry/MMkA=
-
-scheduler@^0.13.6:
-  version "0.13.6"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.13.6.tgz#466a4ec332467b31a91b9bf74e5347072e4cd889"
-  integrity sha512-IWnObHt413ucAYKsD9J1QShUKkbKLQQHdxRyw73sw4FN26iWr3DY/H34xGPe4nmL1DwXyWmSWmMrA9TfQbE/XQ==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
 
 scheduler@^0.15.0:
   version "0.15.0"
